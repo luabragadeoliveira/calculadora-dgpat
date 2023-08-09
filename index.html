@@ -27,7 +27,7 @@
     }
 
     function calcularDepreciacao() {
-      var subelemento = document.getElementById("subelemento").value;
+      var tipo = document.getElementById("tipo").value;
       var valorNotaFiscal = parseFloat(formatarValor(document.getElementById("valorNotaFiscal").value));
       var anoAquisicao = parseInt(document.getElementById("anoAquisicao").value);
       var anoIncorporacao = parseInt(document.getElementById("anoIncorporacao").value);
@@ -35,16 +35,22 @@
       var percentualDepreciacao;
 
       // Percentuais de atualização
-      switch(subelemento) {
-        case "Subelemento1":
+      switch(tipo) {
+        case "moveis":
           percentualDepreciacao = 10;
           break;
-        case "Subelemento2":
+        case "maquinas":
+          percentualDepreciacao = 10;
+          break;
+        case "veiculos":
           percentualDepreciacao = 20;
           break;
-        // mais cases 
-        default:
-          percentualDepreciacao = 0;
+        case "informatica":
+          percentualDepreciacao = 20;
+          break;
+        case "ferramentas":
+          percentualDepreciacao = 15;
+          break;
       }
 
       var anosDecorridos = anoIncorporacao - anoAquisicao;
@@ -58,11 +64,14 @@
 <body>
   <h1>Calculadora de atualização de valores de bens móveis permanentes da UFRJ</h1>
   <form style="display: flex; flex-direction: column; align-items: flex-start; width: 100%;">
-    <label for="subelemento">Subelemento:</label>
-    <select id="subelemento">
-      <option value="Subelemento1">5242 - MOBILIARIO EM GERAL</option>
-      <option value="Subelemento2">5235 - EQUIPAMENTOS DE PROCESSAMENTOS DE DADOS</option>
-      <!-- Adicione mais opções para cada subelemento pré-definido -->
+    <label for="tipo">Tipo:</label>
+    <select id="tipo">
+      <option value="moveis">MÓVEIS E UTENSÍLIOS EM GERAL</option>
+      <option value="maquinas">MÁQUINAS E EQUIPAMENTOS EM GERAL</option>
+      <option value="veiculos">VEÍCULOS DIVERSOS</option>
+      <option value="informatica">BENS DE INFORMÁTICA</option>
+      <option value="ferramentas">FERRAMENTAS</option>
+      <!-- Adicione mais opções para cada tipo pré-definido -->
     </select>
     <br>
     <label for="valorNotaFiscal">Valor da nota fiscal (R$):</label>
@@ -84,7 +93,7 @@
     <h3>Como utilizar a calculadora:</h3>
     <ol>
       <li>
-        <strong>Subelemento:</strong> Selecione o tipo de subelemento do bem móvel permanente na lista suspensa. Cada subelemento terá um percentual de depreciação pré-definido.
+        <strong>tipo:</strong> Selecione o tipo de tipo do bem móvel permanente na lista suspensa. Cada tipo terá um percentual de depreciação pré-definido.
       </li>
       <li>
         <strong>Valor da nota fiscal (R$):</strong> Insira o valor da nota fiscal do bem móvel permanente. Utilize somente números, com vírgula (,) separando a casa decimal. Por exemplo, para representar "100 reais e 50 centavos", insira "100,50".
@@ -100,7 +109,7 @@
       </li>
     </ol>
     <p>
-      A calculadora realizará o cálculo com base no percentual de depreciação do subelemento escolhido e considerará os anos que se passaram entre as datas de aquisição e incorporação. O valor atualizado será exibido logo abaixo do botão de "Calcular".
+      A calculadora realizará o cálculo com base no percentual de depreciação do tipo escolhido e considerará os anos que se passaram entre as datas de aquisição e incorporação. O valor atualizado será exibido logo abaixo do botão de "Calcular".
     </p>
     <p>
       Utilize o valor atualizado para elaborar o Termo de Responsabilidade Provisório.
