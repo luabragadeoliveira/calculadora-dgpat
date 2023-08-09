@@ -55,7 +55,6 @@
 
       var anosDecorridos = anoIncorporacao - anoAquisicao;
       var valorDepreciado = valorNotaFiscal * Math.pow(1 - percentualDepreciacao / 100, anosDecorridos);
-
       // Exibindo o valor depreciado na página
       document.getElementById("resultado").innerHTML = "Valor atualizado: R$" + valorDepreciado.toFixed(2);
     }
@@ -71,7 +70,6 @@
       <option value="veiculos">VEÍCULOS DIVERSOS</option>
       <option value="informatica">BENS DE INFORMÁTICA</option>
       <option value="ferramentas">FERRAMENTAS</option>
-      <!-- Adicione mais opções para cada tipo pré-definido -->
     </select>
     <br>
     <label for="valorNotaFiscal">Valor da nota fiscal (R$):</label>
@@ -93,7 +91,7 @@
     <h3>Como utilizar a calculadora:</h3>
     <ol>
       <li>
-        <strong>tipo:</strong> Selecione o tipo de tipo do bem móvel permanente na lista suspensa. Cada tipo terá um percentual de depreciação pré-definido.
+        <strong>Tipo:</strong> Selecione o tipo de bem móvel permanente na lista suspensa. Cada tipo terá um percentual de depreciação pré-definido.
       </li>
       <li>
         <strong>Valor da nota fiscal (R$):</strong> Insira o valor da nota fiscal do bem móvel permanente. Utilize somente números, com vírgula (,) separando a casa decimal. Por exemplo, para representar "100 reais e 50 centavos", insira "100,50".
@@ -109,7 +107,7 @@
       </li>
     </ol>
     <p>
-      A calculadora realizará o cálculo com base no percentual de depreciação do tipo escolhido e considerará os anos que se passaram entre as datas de aquisição e incorporação. O valor atualizado será exibido logo abaixo do botão de "Calcular".
+      A calculadora realizará o cálculo com base no percentual de depreciação do tipo de bem escolhido e considerará os anos que se passaram entre as datas de aquisição e incorporação. O valor atualizado será exibido logo abaixo do botão de "Calcular".
     </p>
     <p>
       Utilize o valor atualizado para elaborar o Termo de Responsabilidade Provisório.
